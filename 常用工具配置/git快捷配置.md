@@ -65,3 +65,12 @@ git remote add origin https://github.com/zyb-prj/test.git
 git branch -M main
 git push -u origin main
 ```
+
+## chapter4:解决推代码时重复输入账号密码的问题
+
+在推代码至远程分支前，运行以下命令配置Git使用钥匙串访问管理器。
+
+```shell
+git config --global credential.helper osxkeychain
+```
+
