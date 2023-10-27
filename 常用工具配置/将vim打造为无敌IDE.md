@@ -65,8 +65,8 @@
     sudo apt install gcc-8
     ```
 
-    ```
-    sudo apt install gcc+8
+    ```bash
+    sudo apt install g++-8
     ```
 
 - 2nd 配置新版本全局可用
@@ -85,13 +85,15 @@
 
 ## 2-3_安装指定版本的cmake
 
-### 2-3-1_下载资源
+### 2-3-1_方式1
+
+#### 2-3-1-1_下载资源
 
 官网全版本资源下载地址：[cmake官网全版本资源下载](https://cmake.org/download/)
 
 个人维护版本（3.27）：[cmake3.27下载](https://zyb-tools.oss-cn-chengdu.aliyuncs.com/ubuntu-software/cmake/cmake-3.27.7.tar.gz?OSSAccessKeyId=LTAI5tREkNKGRcMiPdgNQUye&Expires=10000000001696735000&Signature=zwJzsjK90Fby7%2B5kYziieyhzRfA%3D)。若下载失效，请联系我，邮箱地址为 zyb_2457@outlook.com。
 
-### 2-3-2_软件安装
+#### 2-3-1-2_软件安装
 
 - 1st 查看当前版本
 
@@ -145,6 +147,20 @@
     cmake --version
     ```
 
+### 2-3-2_方式2
+
+- 1st 安装 snap 工具
+
+    ```bash
+    sudo apt install snapd
+    ```
+
+- 安装最新版本 cmake
+
+    ```bash
+    sudo snap install cmake --classic
+    ```
+
 ## 2-4_安装指定版本的python3.10
 
 ### 2-4-1_源码包下载
@@ -165,10 +181,9 @@
 - 3rd 安装必备工具
 
     ```bash
-    sudo apt update
     sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev wget
     ```
-
+    
 - 4th 进入源码根目录 ~/software/Python-3.10.0 打配置
 
     ```bash
