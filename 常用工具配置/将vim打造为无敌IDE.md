@@ -585,6 +585,10 @@ noremap <F6> :!ctags -R<CR>
 - 1st 进入 YCM 源码根目录 ~/.vim/bundle/YouCompleteMe（执行自动化安装后会自行下载旧版本），拉取最新代码。
 
     ```bash
+    cd ~/.vim/bundle/YouCompleteMe
+    ```
+
+    ```bash
     git submodule update --init --recursive
     ```
 
