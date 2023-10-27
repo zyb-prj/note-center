@@ -582,16 +582,20 @@ noremap <F6> :!ctags -R<CR>
 
 ##### 3-2-2-3-2_拉取并编译源码
 
-- 1st 进入 YCM 源码根目录 ~/.vim/bundle/YouCompleteMe（执行自动化安装后会自行下载旧版本），拉取最新代码。
+- 1st 进入 YCM 源码根目录 ~/.vim/bundle/YouCompleteMe（执行自动化安装后会自行下载旧版本）。
 
     ```bash
     cd ~/.vim/bundle/YouCompleteMe
     ```
 
+- 2nd 拉取最新代码。
+
     ```bash
     git submodule update --init --recursive
     ```
 
+    
+    
 - 2nd 在 YCM 源码根目录编译源码，一定要用做好软连接的 python3.10 编译。
 
     ```bash
@@ -616,6 +620,32 @@ noremap <F6> :!ctags -R<CR>
     ```
 
 - 再次使用`:PluginInstall`指令重新安装插件，详情参考[自动化安装插件](#3-2-2-2_自动化安装插件)部分。
+
+##### 3-2-2-3-4_同步环境
+
+该步骤用于解决在低版本 ubuntu 中通过编译源码安装 python3 执行编译引起 vim 启动提示错误信息的问题。
+
+错误信息为：
+
+```bash
+The ycmd server SHUT DOWN (restart with ':YcmRestartServer'). Unexpected exit code 1.
+```
+
+解决方式如下：
+
+- 1st 一定要确保在 ～/.vimrc 中配置的 python3 版本与编译 YouCompleteMe 的版本一致，此处为 python3.10
+
+- 2nd 跳转至 YouCompleteMe 源码根目录
+
+    ```bash
+    cd ~/.vim/bundle/YouCompleteMe
+    ```
+
+- 3rd 执行如下指令
+
+    ```bash
+    python3.10 install.py
+    ```
 
 ## 3-3_其它必备工具安装
 
